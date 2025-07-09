@@ -1,42 +1,46 @@
 name: Deploy
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write
-      pages: write
+    permissions:
+      id-token: write
+      pages: write
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-          cache: pip
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+          cache: pip
 
-      - name: Build for production
-        run: mkdocs build -s
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
+      - name: Build for production
+        run: mkdocs build -s
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
