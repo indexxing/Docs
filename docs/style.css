@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Poppins:wght@400;500;700&display=swap');
 
+/* =============================================
+   VARIABLES
+   ============================================= */
 :root {
 	--background: #181818;
 	--polytoria-red: #dd5555;
 }
 
+/* =============================================
+   SCROLLBAR
+   ============================================= */
 ::-webkit-scrollbar {
 	width: 0px;
 	background: transparent;
 }
 
+/* =============================================
+   BASE
+   ============================================= */
 html,
 body {
 	background-color: var(--background) !important;
@@ -22,28 +31,210 @@ body {
 	overflow-x: hidden;
 }
 
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+.text-center {
+	position: relative;
+	z-index: 1;
 }
 
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 15px;
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+	--bs-navbar-brand-color: #fff !important;
+	--bs-navbar-brand-hover-color: #fff !important;
+}
+
+nav .navbar-brand {
+	font-family: 'JetBrains Mono', sans-serif;
+	font-weight: 500;
+}
+
+nav .nav-link {
+	color: #a1a3a4 !important;
+}
+
+.navbar-toggler-icon {
+	filter: brightness(100);
+}
+
+/* =============================================
+   CARDS
+   ============================================= */
+.card {
+	--bs-card-bg: #1f1f1f !important;
+	--bs-card-border-radius: 10px !important;
+}
+
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+.main-title {
+	font-size: 60px;
+	font-weight: 700;
+}
+
+.accent-blue {
+	background: linear-gradient(180deg, #0097ff 26.11%, #804fe8 73.33%), linear-gradient(0deg, #ffffff, #ffffff);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.accent-red {
+	color: var(--polytoria-red);
+}
+
+/* =============================================
+   HERO — ICONS BACKGROUND
+   ============================================= */
+.hero-icons-bg {
+	background-image: url("images/icons-background.png");
+	background-color: transparent;
+	position: absolute;
+	margin-top: 4rem;
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 100%;
+	height: 450px;
+	pointer-events: none;
+}
+
+/* =============================================
+   HERO — POPUP IMAGE
+   ============================================= */
+.hero-popup-image {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--background, #181818)),
+		url("images/popup-background.png");
+	background-color: var(--background);
+	width: 100%;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* =============================================
+   HERO — BUTTONS
+   ============================================= */
+.hero-buttons {
+	position: relative;
+	z-index: 2000;
+}
+
+.hero-buttons .btn {
+	font-weight: bold;
+	--bs-border-width: 2px;
+	--bs-border-radius: 7px;
+}
+
+.hero-buttons .btn + .btn {
+	margin-left: 5px;
+}
+
+/* =============================================
+   FEATURE CARDS — placeholder boxes
+   ============================================= */
+.feature-card-placeholder {
+	display: block;
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	background: #262626;
+	margin: 1rem auto 0;
+}
+
+/* =============================================
+   GAME / COMMUNITY CARDS
+   ============================================= */
+.avatar-headshot {
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+}
+
+.game-card {
+	width: 500px;
+	height: 300px !important;
+	border-radius: 10px;
+	background-size: cover;
+}
+
+.game-card-details {
+	text-align: left;
+}
+
+.game-card-details p {
+	text-shadow: 0 3px 10px #00000040;
+	color: #e6e6e6;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.game-card-details span {
+	text-shadow: 0 3px 10px #00000040;
+	color: #e6e6e6;
+}
+
+.game-card .avatar-headshot {
+	background: #00000040;
+	box-shadow: 0 2px 10px 0px #00000040;
+}
+
+/* =============================================
+   START YOUR JOURNEY BANNER
+   ============================================= */
+.journey-section {
+	padding: 5rem;
+	position: relative;
+}
+
+.journey-bg {
+	background-image: url("images/start-journey.png");
+	background-color: #1a1a2e;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.journey-content {
+	position: relative;
+	z-index: 1;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.site-footer {
+	padding: 1.5rem 12.5rem;
+}
+
+/* =============================================
+   SPACERS
+   ============================================= */
+.spacer-sm  { height: 50px;  }
+.spacer-md  { height: 100px; }
+.spacer-lg  { height: 125px; }
+
+/* =============================================
+   CONTRIBUTORS PAGE
+   ============================================= */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.contributors-list {
+	display: inline-block;
+	white-space: nowrap;
+	animation: scroll 20s linear infinite;
 }
 
 .contributors {
 	overflow-x: auto;
 	white-space: nowrap;
 	padding: 20px 0;
-}
-
-.text-center {
-	position: relative;
-	z-index: 1;
 }
 
 .contributor {
@@ -120,6 +311,16 @@ body {
 	color: #cdcdcd;
 }
 
+/* =============================================
+   RESOURCE LINKS
+   ============================================= */
+.resource-link {
+	transition: border-color 0.2s ease;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
 @media only screen and (max-width: 850px) {
 	.mobile-hidden {
 		display: none;
@@ -142,79 +343,4 @@ body {
 	.col-md-2:has(.resource-link) {
 		margin-bottom: 20px;
 	}
-}
-
-.navbar {
-	--bs-navbar-brand-color: #fff !important;
-	--bs-navbar-brand-hover-color: #fff !important;
-}
-
-nav .navbar-brand {
-	font-family: 'JetBrains Mono', sans-serif;
-	font-weight: 500;
-}
-
-nav .nav-link {
-	color: #a1a3a4 !important;
-}
-
-.card {
-	--bs-card-bg: #1f1f1f !important;
-	--bs-card-border-radius: 10px !important;
-}
-
-.main-title {
-	font-size: 60px;
-	font-weight: 700;
-}
-
-.accent-blue {
-	background: linear-gradient(180deg, #0097ff 26.11%, #804fe8 73.33%), linear-gradient(0deg, #ffffff, #ffffff);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-}
-
-.accent-red {
-	color: var(--polytoria-red);
-}
-
-.avatar-headshot {
-	width: 70px;
-	height: 70px;
-	border-radius: 100%;
-}
-
-.game-card {
-	width: 500px;
-	height: 300px !important;
-	border-radius: 10px;
-
-	background-size: cover;
-}
-
-.game-card-details {
-	text-align: left;
-}
-
-.game-card-details p {
-	text-shadow: 0 3px 10px #00000040;
-	color: #e6e6e6;
-
-	font-size: 20px;
-	font-weight: 500;
-}
-
-.game-card-details span {
-	text-shadow: 0 3px 10px #00000040;
-	color: #e6e6e6;
-}
-
-.game-card .avatar-headshot {
-	background: #00000040;
-	box-shadow: 0 2px 10px 0px #00000040;
-}
-
-.navbar-toggler-icon {
-	filter: brightness(100);
 }

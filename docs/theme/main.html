@@ -19,3 +19,13 @@
 {% block scripts %}
 	{{ super() }}
 {% endblock %}
+
+{% block header %}
+    <!-- Custom Banner -->
+    <div class="banner">
+        <p style="display:inline;font-size:0.8rem;">2.0 is coming! Learn more <a href="/whats-next.html" style="color: #007bff !important; text-decoration: underline !important;">here</a>.</p>
+    </div>
+
+    <!-- Original Header -->
+    {% include "partials/header.html" %}
+{% endblock %}
