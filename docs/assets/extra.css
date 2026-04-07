@@ -40,9 +40,9 @@ h3 + .admonition.quote {
 }
 
 .banner {
-    width: 100%;
-    text-align: center;
-    background-color: #784343;
+	width: 100%;
+	text-align: center;
+	background-color: #784343;
 	padding: 15px;
 	color: #fff;
 }
